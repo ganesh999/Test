@@ -1,0 +1,16 @@
+require 'rubygems'
+require 'railsless-deploy'
+require 'action_mailer'
+require 'capistrano/ext/multistage'
+require 'config/notifier.rb'
+
+load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
+
+load 'config/deploy' # remove this line to skip loading any of the default tasks
+
+set :stages, %w(development staging production)
+
+set :use_sudo, false
+
+set :keep_releases, 5
