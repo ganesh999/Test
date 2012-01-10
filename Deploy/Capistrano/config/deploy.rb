@@ -1,8 +1,8 @@
 # Deployment Recipe
-set :application, "APP_NAME"
+set :application, "install"
 set :repository, "git@github.com:ganesh999/Test.git"
 #
-set :install, "USERNAME on server"
+set :user, "install"
 #
 set :scm, :git
 # # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
