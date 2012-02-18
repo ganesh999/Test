@@ -1,5 +1,5 @@
 # Deployment Recipe
-set :application, "install"
+set :application, "TRY and Install"
 set :repository, "git@github.com:ganesh999/Test.git"
 #
 set :user, "post1"
@@ -35,6 +35,7 @@ after "deploy:setup" do
   # config/ will store our configuration files
   # system/ will store the maintenance page (for now)
   run "mkdir -p #{shared_path}/config #{shared_path}/system #{shared_path}/log"
+  run "chmod 777 #{shared_path}/log"
   # Create the folder for the shared images
   images_to_link.each do |file|
     run "mkdir -p #{shared_path}/website/#{file}"
@@ -88,6 +89,9 @@ end
 
 desc "Show me the differences between the last deploy and the current one"
   task :differences_since_last_deploy do
-    set :differences, capture("cd #{current_path}; #{source.command} diff --name-only #{previous_revision}..#{real_revision}")
+	set :differences, capture("cd #{current_path}; echo \"<pre style=\"font-family: Verdana, Arial, sans serif\">\"; #{source.command} log  --pretty=format:\"%H - (%an) %s\" #{previous_revision}..#{real_revision}; echo \"</pre>\"")
+#    set :differences, capture("cd #{current_path}; #{source.command} diff --name-only #{previous_revision}..#{real_revision}")
     puts "#{differences}"
   end
+
+
