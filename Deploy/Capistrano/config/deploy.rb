@@ -2,7 +2,7 @@
 set :application, "install"
 set :repository, "git@github.com:ganesh999/Test.git"
 #
-set :user, "install"
+set :user, "last"
 #
 set :scm, :git
 # # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`

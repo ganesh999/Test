@@ -1,10 +1,10 @@
 set :deploy_to, "$HOME/production"
 
-role :app, "APP_DOMAIN eg: www.exapmple.com"
+role :app, "localhost"
 #role :db, "www.dashluxe.com", :primary => true
 
 # Email notifications
-set :notify_emails, ["admin@xminds.com" ]
+set :notify_emails, ["ganesh.gk@xminds.in" ]
 
 Notifier.configure do |config|
   config[:recipient_addresses] = notify_emails
