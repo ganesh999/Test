@@ -27,6 +27,7 @@ after "deploy:update_code" do
   end
     #  run "chmod -R 777 #{release_path}/web-app/application/logs"
     # run "chmod -R 777 #{release_path}/web-app/public/images/profilephotos"
+      run "chmod -R 777 #{release_path}/public/WebApp/himi/himidir"
 end
 
 desc "Setups the basic folder structure for a first deployment"
